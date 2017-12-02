@@ -10,11 +10,9 @@ data = data[245:]
 X = data.loc[:,['Volume','Google Trending']].values
 y = data['Open'].values
 
-reg = LinearRegression(copy_X=True, normalize=True).fit(X, y)
+reg = LinearRegression().fit(X, y)
 
 prediction = reg.predict(X)
-
-print reg.score(X,y)
 
 plt.semilogy(data.Date, data['Open'], label="Original")
 plt.semilogy(data.Date, prediction, label="trained")
