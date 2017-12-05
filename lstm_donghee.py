@@ -80,7 +80,7 @@ def forecast_lstm(model, batch_size, X):
     return yhat[0, 0]
 
 #load data
-data = pd.read_csv('bitcoin2.txt',delimiter='\t')
+data = pd.read_csv('bitcoin.csv',delimiter='|')
 
 raw_values = data.Open.values
 diff_values = difference(raw_values,1)
