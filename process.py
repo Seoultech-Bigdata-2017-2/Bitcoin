@@ -12,7 +12,7 @@ TICKER_URL = 'https://www.bitstamp.net/api/ticker/'
 
 def main():
     # Create
-    create()
+    # create()
 
     try:
         while True:
@@ -45,10 +45,10 @@ def create():
 
 def writeCSV(data):
     try:
-        with open('./test.txt', 'a') as f:
+        with open('./bitcoin.txt', 'a') as f:
             fieldnames = ['DATE', 'LAST']
             writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writerow({'DATE': convertTime(data['timestamp']), 'LAST': data['last']})
+            writer.writerow({'DATE': convertTime(datetime.now().timestamp()), 'LAST': data['last']})
 
     except:
         print("Error: Failed to write csv file.")
